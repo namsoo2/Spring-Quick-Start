@@ -1,12 +1,23 @@
 package polymorphism;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 /**
  * Created by Namsoo on 2017. 10. 28..
  */
+
+@Component("lgTV")
 public class LgTV implements TV {
-    public LgTV(){
+
+    @Autowired
+    private Speaker speaker;
+
+    public LgTV() {
         System.out.println("Lg TV - 객체 생성");
     }
+
     public void powerOn() {
         System.out.println("Lg TV - 전원 켠다");
     }
@@ -16,10 +27,10 @@ public class LgTV implements TV {
     }
 
     public void volumeUp() {
-        System.out.println("Lg TV - 소리를 올린다");
+        speaker.volumeUp();
     }
 
     public void volumeDown() {
-        System.out.println("Lg TV - 소리를 내린다");
+        speaker.volumeDown();
     }
 }
