@@ -1,18 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:p="http://www.springframework.org/schema/p"
+
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--스프링 프레임워크도 다른 컨테이너와 마찬가지로 자신이 관리할 클래스들이 등록된 XML설정 파일이 필요하다(이 파일)-->
 
-    <!--scope = prototype - 매 번 요청될 때마다 객체 생성-->
+
+    <!--
+    생성자 인젝션
+    scope = prototype - 매 번 요청될 때마다 객체 생성
     <bean
             id="tv"
             class="polymorphism.SamsungTV"
             lazy-init="true"
             scope="singleton"
             init-method="initMethod"
-            destroy-method="destoryMethod"/>
+            destroy-method="destoryMethod">
+        <constructor-arg index="0" ref="apple"></constructor-arg>
+        <constructor-arg index="1" value="140000"></constructor-arg>
+    </bean>
+    -->
 
+    <!--
+    세터 인젝션
+    <bean
+            id="tv"
+            class="polymorphism.SamsungTV"
+            lazy-init="true"
+            scope="singleton"
+            init-method="initMethod"
+            destroy-method="destoryMethod">
+        <property name="speaker" ref="apple"></property>
+        <property name="price" value="79000"></property>
+    </bean>
+    -->
+
+    <!--
+    p 네임스페이스 사용 ( xmlns:p="http://www.springframework.org/schema/p")
+    TODO p는 property의 약자인가?
+    -->
+    <bean
+            id="tv"
+            class="polymorphism.SamsungTV"
+            lazy-init="true"
+            scope="singleton"
+            init-method="initMethod"
+            destroy-method="destoryMethod"
+            p:speaker-ref="apple" p:price="3200"
+    >
+    </bean>
+
+
+    <bean id="sony" class="polymorphism.SonySpeaker"></bean>
+    <bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+
+
+    <bean id="collectionBean"
+          class="polymorphism.CollectionBean">
+        <property name="addressList">
+            <list>
+                <value>서울시 강남구 개포동</value>
+                <value>경북 영주시</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>

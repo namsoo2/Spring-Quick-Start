@@ -3,6 +3,8 @@ package polymorphism;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+import java.util.List;
+
 /**
  * Created by Namsoo on 2017. 10. 28..
  */
@@ -21,13 +23,23 @@ public class TVUser {
         AbstractApplicationContext factory = new GenericXmlApplicationContext("applicationContext.xml");
 
         //2. Spring 컨테이너로부터 필요한 객체를 요청(Lookup)한다
-        TV tv  = (TV)factory.getBean("tv");
+        TV tv = (TV) factory.getBean("tv");
         tv.powerOn();
         tv.powerOff();
         tv.volumeUp();
         tv.volumeDown();
 
+
+        CollectionBean bean = (CollectionBean) factory.getBean("collectionBean");
+        List<String> addressList = bean.getAddressList();
+        for (String address : addressList) {
+            System.out.println("주소는 : " + address);
+        }
+
+
         //3. Spring 컨테이너를 종료한다
         factory.close();
+
+
     }
 }
