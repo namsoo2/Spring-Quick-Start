@@ -5,7 +5,7 @@
 
     <!--스프링 프레임워크도 다른 컨테이너와 마찬가지로 자신이 관리할 클래스들이 등록된 XML설정 파일이 필요하다(이 파일)-->
 
-    <bean id="tv" class="polymorphism.SamsungTV"/>
+    <bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destoryMethod"/>
 
 
 </beans>
