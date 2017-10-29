@@ -13,71 +13,84 @@
     <!--스프링 프레임워크도 다른 컨테이너와 마찬가지로 자신이 관리할 클래스들이 등록된 XML설정 파일이 필요하다(이 파일)-->
 
 
-    <!--
-    생성자 인젝션
-    scope = prototype - 매 번 요청될 때마다 객체 생성
-    <bean
-            id="tv"
-            class="polymorphism.SamsungTV"
-            lazy-init="true"
-            scope="singleton"
-            init-method="initMethod"
-            destroy-method="destoryMethod">
-        <constructor-arg index="0" ref="apple"></constructor-arg>
-        <constructor-arg index="1" value="140000"></constructor-arg>
-    </bean>
-    -->
+    <!--&lt;!&ndash;-->
+    <!--생성자 인젝션-->
+    <!--scope = prototype - 매 번 요청될 때마다 객체 생성-->
+    <!--<bean-->
+            <!--id="tv"-->
+            <!--class="polymorphism.SamsungTV"-->
+            <!--lazy-init="true"-->
+            <!--scope="singleton"-->
+            <!--init-method="initMethod"-->
+            <!--destroy-method="destoryMethod">-->
+        <!--<constructor-arg index="0" ref="apple"></constructor-arg>-->
+        <!--<constructor-arg index="1" value="140000"></constructor-arg>-->
+    <!--</bean>-->
+    <!--&ndash;&gt;-->
 
-    <!--
-    세터 인젝션
-    <bean
-            id="tv"
-            class="polymorphism.SamsungTV"
-            lazy-init="true"
-            scope="singleton"
-            init-method="initMethod"
-            destroy-method="destoryMethod">
-        <property name="speaker" ref="apple"></property>
-        <property name="price" value="79000"></property>
-    </bean>
-    -->
+    <!--&lt;!&ndash;-->
+    <!--세터 인젝션-->
+    <!--<bean-->
+            <!--id="tv"-->
+            <!--class="polymorphism.SamsungTV"-->
+            <!--lazy-init="true"-->
+            <!--scope="singleton"-->
+            <!--init-method="initMethod"-->
+            <!--destroy-method="destoryMethod">-->
+        <!--<property name="speaker" ref="apple"></property>-->
+        <!--<property name="price" value="79000"></property>-->
+    <!--</bean>-->
+    <!--&ndash;&gt;-->
 
-    <!--
-    p 네임스페이스 사용 ( xmlns:p="http://www.springframework.org/schema/p")
-    TODO p는 property의 약자인가?
-    -->
-    <bean
-            id="tv"
-            class="polymorphism.SamsungTV"
-            lazy-init="true"
-            scope="singleton"
-            init-method="initMethod"
-            destroy-method="destoryMethod"
-            p:speaker-ref="apple" p:price="3200"
-    >
-    </bean>
-
-
-    <!--<bean id="sony" class="polymorphism.SonySpeaker"></bean>-->
-    <bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+    <!--&lt;!&ndash;-->
+    <!--p 네임스페이스 사용 ( xmlns:p="http://www.springframework.org/schema/p")-->
+    <!--TODO p는 property의 약자인가?-->
+    <!--&ndash;&gt;-->
+    <!--<bean-->
+            <!--id="tv"-->
+            <!--class="polymorphism.SamsungTV"-->
+            <!--lazy-init="true"-->
+            <!--scope="singleton"-->
+            <!--init-method="initMethod"-->
+            <!--destroy-method="destoryMethod"-->
+            <!--p:speaker-ref="apple" p:price="3200"-->
+    <!--&gt;-->
+    <!--</bean>-->
 
 
-    <bean id="collectionBean"
-          class="polymorphism.CollectionBean">
-        <property name="addressList">
-            <list>
-                <value>서울시 강남구 개포동</value>
-                <value>경북 영주시</value>
-            </list>
-        </property>
-    </bean>
+    <!--&lt;!&ndash;<bean id="sony" class="polymorphism.SonySpeaker"></bean>&ndash;&gt;-->
+    <!--<bean id="apple" class="polymorphism.AppleSpeaker"></bean>-->
+
+
+    <!--<bean id="collectionBean"-->
+          <!--class="polymorphism.CollectionBean">-->
+        <!--<property name="addressList">-->
+            <!--<list>-->
+                <!--<value>서울시 강남구 개포동</value>-->
+                <!--<value>경북 영주시</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
 
 
 
-    <!--클래스들을 스캔하여 @Component가 설정된 클래스들을 자동으로 생성한다-->
-    <context:component-scan base-package="polymorphism"></context:component-scan>
+    <!--&lt;!&ndash;클래스들을 스캔하여 @Component가 설정된 클래스들을 자동으로 생성한다&ndash;&gt;-->
+    <!--<context:component-scan base-package="polymorphism"></context:component-scan>-->
 
 
+
+
+    <!--setter 인젝션 연습후 어노테이션 적용을 위해 주석-->
+    <!--<bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">-->
+        <!--<property name="userDAO" ref="userDAO"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>-->
+
+
+
+
+    <context:component-scan base-package="com.springbook.biz"></context:component-scan>
 
 
 </beans>
