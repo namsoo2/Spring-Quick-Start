@@ -1,11 +1,19 @@
 package com.springbook.biz.common;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by Namsoo on 2017. 11. 4..
  */
+@Service
+@Aspect
 public class AfterThrowingAdvice {
+
+    @AfterThrowing(pointcut = "PointcutCommon.allPointcut()", throwing = "exceptionObj")
     public void exceptionLog(JoinPoint jp, Exception exceptionObj) {
         String method = jp.getSignature().getName();
 

@@ -88,42 +88,47 @@
     <!--<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>-->
 
 
+    <!--어노테이션 사용-->
     <context:component-scan base-package="com.springbook.biz"></context:component-scan>
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
-    <bean id="log" class="com.springbook.biz.common.LogAdvice"></bean>
-    <bean id="before" class="com.springbook.biz.common.BeforeAdvice"></bean>
-    <bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice"></bean>
-    <bean id="afterThrowing" class="com.springbook.biz.common.AfterThrowingAdvice"></bean>
-    <bean id="after" class="com.springbook.biz.common.AfterAdvice"></bean>
-    <bean id="around" class="com.springbook.biz.common.AroundAdvice"></bean>
 
-    <aop:config>
-        <aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"></aop:pointcut>
-        <aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"></aop:pointcut>
 
-        <!--<aop:aspect ref="log">-->
-        <!--<aop:before method="printLog" pointcut-ref="getPointcut"></aop:before>-->
+    <!--AOP xml -> 어노테이션-->
+    <!--<bean id="log" class="com.springbook.biz.common.LogAdvice"></bean>-->
+    <!--<bean id="before" class="com.springbook.biz.common.BeforeAdvice"></bean>-->
+    <!--<bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice"></bean>-->
+    <!--<bean id="afterThrowing" class="com.springbook.biz.common.AfterThrowingAdvice"></bean>-->
+    <!--<bean id="after" class="com.springbook.biz.common.AfterAdvice"></bean>-->
+    <!--<bean id="around" class="com.springbook.biz.common.AroundAdvice"></bean>-->
+
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"></aop:pointcut>-->
+        <!--<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"></aop:pointcut>-->
+
+        <!--&lt;!&ndash;<aop:aspect ref="log">&ndash;&gt;-->
+        <!--&lt;!&ndash;<aop:before method="printLog" pointcut-ref="getPointcut"></aop:before>&ndash;&gt;-->
+        <!--&lt;!&ndash;</aop:aspect>&ndash;&gt;-->
+
+        <!--<aop:aspect ref="before">-->
+            <!--<aop:before pointcut-ref="allPointcut" method="beforeLog"></aop:before>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="afterReturning">-->
+            <!--<aop:after-returning pointcut-ref="getPointcut" method="afterLog"-->
+                                 <!--returning="returnObj"></aop:after-returning>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="afterThrowing">-->
+            <!--<aop:after-throwing method="exceptionLog" pointcut-ref="allPointcut"-->
+                                <!--throwing="exceptionObj"></aop:after-throwing>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="after">-->
+            <!--<aop:after method="finallyLog" pointcut-ref="allPointcut"></aop:after>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="around">-->
+            <!--<aop:around method="aroundLog" pointcut-ref="allPointcut"></aop:around>-->
         <!--</aop:aspect>-->
 
-        <aop:aspect ref="before">
-            <aop:before pointcut-ref="allPointcut" method="beforeLog"></aop:before>
-        </aop:aspect>
-        <aop:aspect ref="afterReturning">
-            <aop:after-returning pointcut-ref="getPointcut" method="afterLog"
-                                 returning="returnObj"></aop:after-returning>
-        </aop:aspect>
-        <aop:aspect ref="afterThrowing">
-            <aop:after-throwing method="exceptionLog" pointcut-ref="allPointcut"
-                                throwing="exceptionObj"></aop:after-throwing>
-        </aop:aspect>
-        <aop:aspect ref="after">
-            <aop:after method="finallyLog" pointcut-ref="allPointcut"></aop:after>
-        </aop:aspect>
-        <aop:aspect ref="around">
-            <aop:around method="aroundLog" pointcut-ref="allPointcut"></aop:around>
-        </aop:aspect>
-
-    </aop:config>
+    <!--</aop:config>-->
 
 
 </beans>
