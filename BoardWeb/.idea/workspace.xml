@@ -26,13 +26,13 @@
       <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="146" column="53" lean-forward="false" selection-start-line="146" selection-start-column="53" selection-end-line="146" selection-end-column="53" />
+            <state relative-caret-position="349">
+              <caret line="165" column="70" lean-forward="false" selection-start-line="165" selection-start-column="70" selection-end-line="165" selection-end-column="70" />
               <folding>
-                <element signature="e#5552#5568#0" expanded="true" />
-                <element signature="e#5606#5619#0" expanded="true" />
-                <element signature="e#5662#5680#0" expanded="true" />
-                <element signature="e#5723#5741#0" expanded="true" />
+                <element signature="e#5700#5716#0" expanded="true" />
+                <element signature="e#5754#5767#0" expanded="true" />
+                <element signature="e#5810#5828#0" expanded="true" />
+                <element signature="e#5871#5889#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoardDAOSpring.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BoardDAOSpring.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardDAOSpring.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
@@ -127,11 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AfterReturningAdvice.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterReturningAdvice.java">
+      <file leaf-file-name="BoardServiceClient.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardServiceClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="18" column="47" lean-forward="false" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+            <state relative-caret-position="311">
+              <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -201,7 +201,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardServiceClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/user/UserServiceClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/LogAdvice.java" />
@@ -214,9 +213,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/common/AfterAdvice.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/database.properties" />
-        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardDAOSpring.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardServiceClient.java" />
       </list>
     </option>
   </component>
@@ -1244,12 +1244,12 @@
       <workItem from="1509168028725" duration="14899000" />
       <workItem from="1509271196755" duration="8402000" />
       <workItem from="1509425443953" duration="1902000" />
-      <workItem from="1509774395509" duration="9211000" />
+      <workItem from="1509774395509" duration="10434000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34414000" />
+    <option name="totallyTimeSpent" value="35637000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1274,7 +1274,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32802126" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802126" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934928" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1338,10 +1338,10 @@
         <state relative-caret-position="1080">
           <caret line="72" column="18" lean-forward="true" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
           <folding>
-            <element signature="e#5552#5568#0" expanded="true" />
-            <element signature="e#5606#5619#0" expanded="true" />
-            <element signature="e#5662#5680#0" expanded="true" />
-            <element signature="e#5723#5741#0" expanded="true" />
+            <element signature="e#5700#5716#0" expanded="true" />
+            <element signature="e#5754#5767#0" expanded="true" />
+            <element signature="e#5810#5828#0" expanded="true" />
+            <element signature="e#5871#5889#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1564,16 +1564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardServiceClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springbook/biz/user/impl/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1707,19 +1697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="146" column="53" lean-forward="false" selection-start-line="146" selection-start-column="53" selection-end-line="146" selection-end-column="53" />
-          <folding>
-            <element signature="e#5552#5568#0" expanded="true" />
-            <element signature="e#5606#5619#0" expanded="true" />
-            <element signature="e#5662#5680#0" expanded="true" />
-            <element signature="e#5723#5741#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springbook/biz/board/impl/BoardDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-83">
@@ -1763,6 +1740,29 @@
             <marker date="1509788589000" expanded="true" signature="843:890" ph="update board... " />
             <marker date="1509788589000" expanded="true" signature="999:1030" ph="select * fro... board" />
             <marker date="1509788589000" expanded="true" signature="1072:1109" ph="select * fro... board" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="165" column="70" lean-forward="false" selection-start-line="165" selection-start-column="70" selection-end-line="165" selection-end-column="70" />
+          <folding>
+            <element signature="e#5700#5716#0" expanded="true" />
+            <element signature="e#5754#5767#0" expanded="true" />
+            <element signature="e#5810#5828#0" expanded="true" />
+            <element signature="e#5871#5889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springbook/biz/board/BoardServiceClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
