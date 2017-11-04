@@ -36,6 +36,7 @@ public class UserDAO {
                 user.setPassword(rs.getString("PASSWORD"));
                 user.setName(rs.getString("NAME"));
                 user.setPassword(rs.getString("ROLE"));
+                user.setRole(rs.getString("ROLE"));
             }
         } catch (Exception e) {
             e.printStackTrace();
