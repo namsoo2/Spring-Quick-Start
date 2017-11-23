@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://springframework.org/schema/context/spring-context-4.3.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--스프링 프레임워크도 다른 컨테이너와 마찬가지로 자신이 관리할 클래스들이 등록된 XML설정 파일이 필요하다(이 파일)-->
+
+
+    <!--&lt;!&ndash;-->
+    <!--생성자 인젝션-->
+    <!--scope = prototype - 매 번 요청될 때마다 객체 생성-->
+    <!--<bean-->
+    <!--id="tv"-->
+    <!--class="polymorphism.SamsungTV"-->
+    <!--lazy-init="true"-->
+    <!--scope="singleton"-->
+    <!--init-method="initMethod"-->
+    <!--destroy-method="destoryMethod">-->
+    <!--<constructor-arg index="0" ref="apple"></constructor-arg>-->
+    <!--<constructor-arg index="1" value="140000"></constructor-arg>-->
+    <!--</bean>-->
+    <!--&ndash;&gt;-->
+
+    <!--&lt;!&ndash;-->
+    <!--세터 인젝션-->
+    <!--<bean-->
+    <!--id="tv"-->
+    <!--class="polymorphism.SamsungTV"-->
+    <!--lazy-init="true"-->
+    <!--scope="singleton"-->
+    <!--init-method="initMethod"-->
+    <!--destroy-method="destoryMethod">-->
+    <!--<property name="speaker" ref="apple"></property>-->
+    <!--<property name="price" value="79000"></property>-->
+    <!--</bean>-->
+    <!--&ndash;&gt;-->
+
+    <!--&lt;!&ndash;-->
+    <!--p 네임스페이스 사용 ( xmlns:p="http://www.springframework.org/schema/p")-->
+    <!--TODO p는 property의 약자인가?-->
+    <!--&ndash;&gt;-->
+    <!--<bean-->
+    <!--id="tv"-->
+    <!--class="polymorphism.SamsungTV"-->
+    <!--lazy-init="true"-->
+    <!--scope="singleton"-->
+    <!--init-method="initMethod"-->
+    <!--destroy-method="destoryMethod"-->
+    <!--p:speaker-ref="apple" p:price="3200"-->
+    <!--&gt;-->
+    <!--</bean>-->
+
+
+    <!--&lt;!&ndash;<bean id="sony" class="polymorphism.SonySpeaker"></bean>&ndash;&gt;-->
+    <!--<bean id="apple" class="polymorphism.AppleSpeaker"></bean>-->
+
+
+    <!--<bean id="collectionBean"-->
+    <!--class="polymorphism.CollectionBean">-->
+    <!--<property name="addressList">-->
+    <!--<list>-->
+    <!--<value>서울시 강남구 개포동</value>-->
+    <!--<value>경북 영주시</value>-->
+    <!--</list>-->
+    <!--</property>-->
+    <!--</bean>-->
+
+
+    <!--&lt;!&ndash;클래스들을 스캔하여 @Component가 설정된 클래스들을 자동으로 생성한다&ndash;&gt;-->
+    <!--<context:component-scan base-package="polymorphism"></context:component-scan>-->
+
+
+    <!--setter 인젝션 연습후 어노테이션 적용을 위해 주석-->
+    <!--<bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">-->
+    <!--<property name="userDAO" ref="userDAO"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>-->
+
+
+    <!--어노테이션 사용-->
+    <context:component-scan base-package="com.springbook.biz"></context:component-scan>
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+
+
+    <!--AOP xml -> 어노테이션-->
+    <!--<bean id="log" class="com.springbook.biz.common.LogAdvice"></bean>-->
+    <!--<bean id="before" class="com.springbook.biz.common.BeforeAdvice"></bean>-->
+    <!--<bean id="afterReturning" class="com.springbook.biz.common.AfterReturningAdvice"></bean>-->
+    <!--<bean id="afterThrowing" class="com.springbook.biz.common.AfterThrowingAdvice"></bean>-->
+    <!--<bean id="after" class="com.springbook.biz.common.AfterAdvice"></bean>-->
+    <!--<bean id="around" class="com.springbook.biz.common.AroundAdvice"></bean>-->
+
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="allPointcut" expression="execution(* com.springbook.biz..*Impl.*(..))"></aop:pointcut>-->
+        <!--<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"></aop:pointcut>-->
+
+        <!--&lt;!&ndash;<aop:aspect ref="log">&ndash;&gt;-->
+        <!--&lt;!&ndash;<aop:before method="printLog" pointcut-ref="getPointcut"></aop:before>&ndash;&gt;-->
+        <!--&lt;!&ndash;</aop:aspect>&ndash;&gt;-->
+
+        <!--<aop:aspect ref="before">-->
+            <!--<aop:before pointcut-ref="allPointcut" method="beforeLog"></aop:before>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="afterReturning">-->
+            <!--<aop:after-returning pointcut-ref="getPointcut" method="afterLog"-->
+                                 <!--returning="returnObj"></aop:after-returning>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="afterThrowing">-->
+            <!--<aop:after-throwing method="exceptionLog" pointcut-ref="allPointcut"-->
+                                <!--throwing="exceptionObj"></aop:after-throwing>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="after">-->
+            <!--<aop:after method="finallyLog" pointcut-ref="allPointcut"></aop:after>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="around">-->
+            <!--<aop:around method="aroundLog" pointcut-ref="allPointcut"></aop:around>-->
+        <!--</aop:aspect>-->
+
+    <!--</aop:config>-->
+
+
+
+    <!--DataSource 설정-->
+    <context:property-placeholder location="classpath:config/database.properties"/>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!--Spring JDBC 설정-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+
+    <!--Transaction 설정-->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <aop:pointcut id="txPointcut" expression="execution(* com.springbook.biz..*(..))"/>
+
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+    </aop:config>
+
+</beans>
