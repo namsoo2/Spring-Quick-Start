@@ -2,19 +2,19 @@
   Created by IntelliJ IDEA.
   User: Namsoo
   Date: 2017. 11. 9.
-  Time: ì˜¤í›„ 2:35
+  Time: ¿ÀÈÄ 2:35
   To change this template use File | Settings | File Templates.
 --%>
 <%@page import="com.springbook.biz.user.impl.UserDAO" %>
 <%@ page import="com.springbook.biz.user.UserVO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 
 <%
-    // 1. ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ
+    // 1. »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ
     String id = request.getParameter("id");
     String password = request.getParameter("password");
 
-    // 2. DB ì—°ë™ ì²˜ë¦¬
+    // 2. DB ¿¬µ¿ Ã³¸®
     UserVO vo = new UserVO();
     vo.setId(id);
     vo.setPassword(password);
@@ -24,7 +24,7 @@
     UserDAO userDAO = new UserDAO();
     UserVO user = userDAO.getUser(vo);
 
-    // 3. í™”ë©´ ë„¤ë¹„ê²Œì´ì…˜
+    // 3. È­¸é ³×ºñ°ÔÀÌ¼Ç
     if (user != null) {
         response.sendRedirect("getBoardList.jsp");
     } else {

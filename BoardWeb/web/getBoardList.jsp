@@ -4,19 +4,19 @@
   Created by IntelliJ IDEA.
   User: Namsoo
   Date: 2017. 11. 9.
-  Time: ì˜¤í›„ 2:59
+  Time: ¿ÀÈÄ 2:59
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 
 <%
-    // 1. ì‚¬ìš©ìž ìž…ë ¥ ì •ë³´ ì¶”ì¶œ(ê²€ìƒ‰ ê¸°ëŠ¥ì€ ë‚˜ì¤‘ì—)
-    // 2. DB ì—°ë™ ì²˜ë¦¬
+    // 1. »ç¿ëÀÚ ÀÔ·Â Á¤º¸ ÃßÃâ(°Ë»ö ±â´ÉÀº ³ªÁß¿¡)
+    // 2. DB ¿¬µ¿ Ã³¸®
     BoardVO vo = new BoardVO();
     BoardDAO boardDAO = new BoardDAO();
     List<BoardVO> boardList = boardDAO.getBoardList(vo);
 
-    // 3. ì‘ë‹µ í™”ë©´ êµ¬ì„±
+    // 3. ÀÀ´ä È­¸é ±¸¼º
 %>
 
 <%--<!DOCTYPE html PUBLIC "-/....">--%>
@@ -24,37 +24,37 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-    <title>ê¸€ ëª©ë¡</title>
+    <title>±Û ¸ñ·Ï</title>
 </head>
 <body>
 <center>
-    <h1>ê¸€ ëª©ë¡</h1>
-    <h3>í…ŒìŠ¤íŠ¸ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤...<a href="logout_proc.jsp">Log-out</a></h3>
+    <h1>±Û ¸ñ·Ï</h1>
+    <h3>Å×½ºÆ®´Ô È¯¿µÇÕ´Ï´Ù...<a href="logout_proc.jsp">Log-out</a></h3>
 
-    <%--ê²€ìƒ‰ ì‹œìž‘--%>
+    <%--°Ë»ö ½ÃÀÛ--%>
     <form action="getBoardList.jsp" method="post">
         <table border="1" cellpadding="0" cellspacing="0" width="700">
             <tr>
                 <td align="right">
                     <select name="searchCondition">
-                        <option value="TITLE">ì œëª©</option>
-                        <option value="CONTENT">ë‚´ìš©</option>
+                        <option value="TITLE">Á¦¸ñ</option>
+                        <option value="CONTENT">³»¿ë</option>
                     </select>
                     <input name="searchKeyword" type="text"/>
-                    <input type="submit" value="ê²€ìƒ‰">
+                    <input type="submit" value="°Ë»ö">
                 </td>
             </tr>
         </table>
     </form>
-    <%--ê²€ìƒ‰ ì¢…ë£Œ--%>
+    <%--°Ë»ö Á¾·á--%>
 
     <table border="1" cellpadding="0" cellspacing="0" width="700">
         <tr>
-            <td bgcolor="orange" width="100">ë²ˆí˜¸</td>
-            <td bgcolor="orange" width="200">ì œëª©</td>
-            <td bgcolor="orange" width="150">ìž‘ì„±ìž</td>
-            <td bgcolor="orange" width="150">ë“±ë¡ì¼</td>
-            <td bgcolor="orange" width="100">ì¡°íšŒìˆ˜</td>
+            <td bgcolor="orange" width="100">¹øÈ£</td>
+            <td bgcolor="orange" width="200">Á¦¸ñ</td>
+            <td bgcolor="orange" width="150">ÀÛ¼ºÀÚ</td>
+            <td bgcolor="orange" width="150">µî·ÏÀÏ</td>
+            <td bgcolor="orange" width="100">Á¶È¸¼ö</td>
         </tr>
 
         <%for (BoardVO board : boardList) {%>
@@ -74,7 +74,7 @@
         <%}%>
     </table>
     <br>
-    <a href="insertBoard.jsp">ìƒˆ ê¸€ ë“±ë¡</a>
+    <a href="insertBoard.jsp">»õ ±Û µî·Ï</a>
 </center>
 </body>
 </html>
