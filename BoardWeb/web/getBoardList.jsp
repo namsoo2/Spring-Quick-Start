@@ -10,11 +10,7 @@
 <%@ page contentType="text/html;charset=EUC-KR" language="java" %>
 
 <%
-    // 1. 사용자 입력 정보 추출(검색 기능은 나중에)
-    // 2. DB 연동 처리
-    BoardVO vo = new BoardVO();
-    BoardDAO boardDAO = new BoardDAO();
-    List<BoardVO> boardList = boardDAO.getBoardList(vo);
+    List<BoardVO> boardList = (List)session.getAttribute("boardList");
 
     // 3. 응답 화면 구성
 %>
@@ -61,7 +57,7 @@
         <tr>
             <td><%=board.getSeq()%>
             </td>
-            <td align="left"><a href="getBoard.jsp?seq=<%= board.getSeq()%>">
+            <td align="left"><a href="getBoard.do?seq=<%= board.getSeq()%>">
                 <%=board.getTitle()%>
             </a></td>
             <td><%=board.getWriter()%>
