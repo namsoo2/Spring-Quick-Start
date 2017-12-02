@@ -1,6 +1,4 @@
-<%@ page import="com.springbook.biz.board.impl.BoardDAO" %>
-<%@ page import="com.springbook.biz.board.BoardVO" %>
-<%@ page import="java.util.List" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Namsoo
   Date: 2017. 11. 9.
@@ -8,14 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=EUC-KR" language="java" %>
+<%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 
-<%
-    List<BoardVO> boardList = (List)session.getAttribute("boardList");
-
-    // 3. 응답 화면 구성
-%>
-
-<%--<!DOCTYPE html PUBLIC "-/....">--%>
 
 <html>
 <head>
@@ -25,7 +17,7 @@
 <body>
 <center>
     <h1>글 목록</h1>
-    <h3>테스트님 환영합니다...<a href="logout_proc.jsp">Log-out</a></h3>
+    <h3>테스트님 환영합니다...<a href="logout.do">Log-out</a></h3>
 
     <%--검색 시작--%>
     <form action="getBoardList.jsp" method="post">
@@ -53,21 +45,16 @@
             <td bgcolor="orange" width="100">조회수</td>
         </tr>
 
-        <%for (BoardVO board : boardList) {%>
-        <tr>
-            <td><%=board.getSeq()%>
-            </td>
-            <td align="left"><a href="getBoard.do?seq=<%= board.getSeq()%>">
-                <%=board.getTitle()%>
-            </a></td>
-            <td><%=board.getWriter()%>
-            </td>
-            <td><%=board.getRegDate()%>
-            </td>
-            <td><%=board.getCnt()%>
-            </td>
-        </tr>
-        <%}%>
+        <c:forEach items="${boardList}" var="board">
+            <tr>
+                <td>${board.seq}</td>
+                <td align="left"><a href="getBoard.do?seq=${board.seq}">${board.title}</a></td>
+                <td>${board.writer}</td>
+                <td>${board.regDate}</td>
+                <td>${board.cnt}</td>
+            </tr>
+        </c:forEach>
+
     </table>
     <br>
     <a href="insertBoard.jsp">새 글 등록</a>
