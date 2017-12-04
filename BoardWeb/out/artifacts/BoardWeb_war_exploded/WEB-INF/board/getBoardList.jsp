@@ -55,26 +55,9 @@
             </tr>
         </c:forEach>
 
-        <%--<%for (BoardVO board : boardList) {%>--%>
-        <%--<tr>--%>
-        <%--<td><%=board.getSeq()%>--%>
-        <%--</td>--%>
-        <%--<td align="left"><a href="getBoard.do?seq=<%= board.getSeq()%>">--%>
-        <%--<%=board.getTitle()%>--%>
-        <%--</a></td>--%>
-        <%--<td><%=board.getWriter()%>--%>
-        <%--</td>--%>
-        <%--<td><%=board.getRegDate()%>--%>
-        <%--</td>--%>
-        <%--<td><%=board.getCnt()%>--%>
-        <%--</td>--%>
-        <%--</tr>--%>
-        <%--<%}%>--%>
-
-
     </table>
     <br>
-    <a href="insertBoard.jsp">새 글 등록</a>
+    <a href="../../insertBoard.jsp">새 글 등록</a>
 </center>
 </body>
 </html>
