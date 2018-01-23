@@ -45,7 +45,7 @@
     </form>
 
     <hr>
-    <a href="WEB-INF/board/getBoardList.jsp">글 목록 가기</a>
+    <a href="getBoardList.jsp">글 목록 가기</a>
 </center>
 </body>
 </html>
